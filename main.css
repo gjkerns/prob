@@ -1,0 +1,49 @@
+body {
+	padding: 0px;
+	margin: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+#navMenu td a{	
+	color: #FFFFFF;
+	font-size: 16px;
+	background-color: #009999;
+	border: solid 2px #000000;
+	text-align: center;
+	text-decoration: none;
+	
+	height: 18px;
+	width: 150px;
+	margin-bottom: 2px;
+	
+	display: block;
+}
+
+#navMenu td a:hover{
+	text-decoration: underline;
+	background-color: #FF9900;
+}
+
+.articleTitle{
+	font-size: 16px;
+}
+
+.name{
+	font-family:"Courier New", Courier, monospace;
+	font-size: 14px;
+}
+
+#list li{
+	padding-bottom:10px;
+}
+
+a:link {
+	color: #009999;
+}
+a:visited {
+	color: #006B6B;
+}
+a:hover {
+	color: #FF9900;
+}
