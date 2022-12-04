@@ -1,0 +1,92 @@
+<html><head><title>Union of Subsets</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>union(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   union">
+<param name="keyword" value="R:   union.default">
+<param name="keyword" value="R:   union.data.frame">
+<param name="keyword" value="R:   union.ps">
+<param name="keyword" value=" Union of Subsets">
+</object>
+
+
+<h2>Union of Subsets</h2>
+
+
+<h3>Description</h3>
+
+<p>
+Calculates the union of subsets of a probability space.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+union(x, ...)
+
+## Default S3 method:
+union(x, y, ...)
+
+## S3 method for class 'data.frame':
+union(x, y, ...)
+
+## S3 method for class 'ps':
+union(x, y, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x, y</code></td>
+<td>
+vectors, data frames, or <code>ps</code> objects containing a sequence of items (conceptually) </td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+further arguments to be passed to or from other methods.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+This function operates row-wise on dataframes, and element-wise among the outcomes of <code>ps</code> objects. The elements of <code>union(x,y)</code> are those elements in <code>x</code> or <code>y</code>, or both. The definition is taken to match the version in the <code>base</code> package.
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+A data frame or subset of a probability space of the same type as its arguments.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+G. Jay Kerns <a href="mailto:gkerns@ysu.edu">gkerns@ysu.edu</a>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="intersect.html">intersect</a></code>, <code><a href="setdiff.html">setdiff</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+S &lt;- cards()
+A &lt;- subset(S, suit == "Heart")
+B &lt;- subset(S, rank == "A" )
+union(A, B)
+   </pre>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 1.0-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

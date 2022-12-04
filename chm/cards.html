@@ -1,0 +1,72 @@
+<html><head><title>A Standard Set of Playing Cards</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>cards(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   cards">
+<param name="keyword" value=" A Standard Set of Playing Cards">
+</object>
+
+
+<h2>A Standard Set of Playing Cards</h2>
+
+
+<h3>Description</h3>
+
+<p>
+The title says it all.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+cards(jokers = FALSE, makespace = FALSE)
+
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>jokers</code></td>
+<td>
+logical.</td></tr>
+<tr valign="top"><td><code>makespace</code></td>
+<td>
+logical.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+This generates a data frame sample space of a standard deck of 52 playing cards.  Optionally, the user can specify that Jokers be included, which have a <code>rank</code> but with <code>suit</code> a missing value.
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+A data frame with columns <code>rank</code> and <code>suit</code>, and optionally a column of equally likely <code>probs</code>.</p>
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="rolldie.html">rolldie</a></code>, <code><a href="tosscoin.html">tosscoin</a></code>, and <code><a href="roulette.html">roulette</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+cards()
+cards(makespace = TRUE)
+</pre>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 0.9-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

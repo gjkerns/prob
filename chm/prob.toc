@@ -1,0 +1,315 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HEAD></HEAD><HTML><BODY>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Package prob:  Contents">
+<param name="Local" value="00Index.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Package prob:  R objects">
+</OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="prob-package">
+<param name="Local" value="prob-package.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="addrv">
+<param name="Local" value="addrv.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="cards">
+<param name="Local" value="cards.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="countrep">
+<param name="Local" value="countrep.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="countrep.data.frame">
+<param name="Local" value="countrep.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="countrep.default">
+<param name="Local" value="countrep.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="empirical">
+<param name="Local" value="empirical.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="euchredeck">
+<param name="Local" value="euchredeck.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="iidspace">
+<param name="Local" value="iidspace.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="intersect">
+<param name="Local" value="intersect.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="intersect.data.frame">
+<param name="Local" value="intersect.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="intersect.default">
+<param name="Local" value="intersect.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="intersect.ps">
+<param name="Local" value="intersect.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="is.probspace">
+<param name="Local" value="is.probspace.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="isin">
+<param name="Local" value="isin.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="isin.data.frame">
+<param name="Local" value="isin.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="isin.default">
+<param name="Local" value="isin.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="isrep">
+<param name="Local" value="isrep.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="isrep.data.frame">
+<param name="Local" value="isrep.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="isrep.default">
+<param name="Local" value="isrep.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="marginal">
+<param name="Local" value="marginal.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="noorder">
+<param name="Local" value="noorder.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="nsamp">
+<param name="Local" value="nsamp.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="permsn">
+<param name="Local" value="permsn.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="prob">
+<param name="Local" value="prob.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="prob.default">
+<param name="Local" value="prob.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="prob.ps">
+<param name="Local" value="prob.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="probspace">
+<param name="Local" value="probspace.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="probspace.default">
+<param name="Local" value="probspace.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="probspace.list">
+<param name="Local" value="probspace.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="rolldie">
+<param name="Local" value="rolldie.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="roulette">
+<param name="Local" value="roulette.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="setdiff">
+<param name="Local" value="setdiff.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="setdiff.data.frame">
+<param name="Local" value="setdiff.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="setdiff.default">
+<param name="Local" value="setdiff.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="setdiff.ps">
+<param name="Local" value="setdiff.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="sim">
+<param name="Local" value="sim.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="sim.default">
+<param name="Local" value="sim.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="sim.ps">
+<param name="Local" value="sim.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="subset">
+<param name="Local" value="subset.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="subset.ps">
+<param name="Local" value="subset.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="tosscoin">
+<param name="Local" value="tosscoin.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="union">
+<param name="Local" value="union.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="union.data.frame">
+<param name="Local" value="union.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="union.default">
+<param name="Local" value="union.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="union.ps">
+<param name="Local" value="union.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="urnsamples">
+<param name="Local" value="urnsamples.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="urnsamples.data.frame">
+<param name="Local" value="urnsamples.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="urnsamples.default">
+<param name="Local" value="urnsamples.html">
+</OBJECT>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Package prob:  Titles">
+</OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="A Deck of Playing Cards for Euchre">
+<param name="Local" value="euchredeck.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="A Standard Set of Playing Cards">
+<param name="Local" value="cards.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Adding Random Variables to a Probability Space">
+<param name="Local" value="addrv.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Count Repetitions">
+<param name="Local" value="countrep.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Elementary Probability on Finite Sample Spaces ">
+<param name="Local" value="prob-package.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Empirical Summary of a Simulation">
+<param name="Local" value="empirical.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Generate All Permutations of x Elements Taken m at a Time">
+<param name="Local" value="permsn.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Independent Identical Experiments">
+<param name="Local" value="iidspace.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Intersection of Subsets">
+<param name="Local" value="intersect.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Is Repeated in a Vector">
+<param name="Local" value="isrep.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Marginal Distributions">
+<param name="Local" value="marginal.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Number of Samples from an Urn">
+<param name="Local" value="nsamp.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Probability and Conditional Probability">
+<param name="Local" value="prob.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Probability Spaces">
+<param name="Local" value="probspace.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Rolling a Die">
+<param name="Local" value="rolldie.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Roulette">
+<param name="Local" value="roulette.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Sampling from Urns">
+<param name="Local" value="urnsamples.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Set Difference of Subsets">
+<param name="Local" value="setdiff.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Simulate Draws from a Sample Space">
+<param name="Local" value="sim.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Sort and Merge Probability Space Outcomes">
+<param name="Local" value="noorder.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Subsets of Probability Spaces">
+<param name="Local" value="subset.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Test Whether One Vector Is In Another Vector">
+<param name="Local" value="isin.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Testing for a Probability Space">
+<param name="Local" value="is.probspace.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Tossing a Coin">
+<param name="Local" value="tosscoin.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Union of Subsets">
+<param name="Local" value="union.html">
+</OBJECT>
+</UL>
+</UL>
+</BODY></HTML>

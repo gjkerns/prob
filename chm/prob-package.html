@@ -1,0 +1,79 @@
+<html><head><title>Elementary Probability on Finite Sample Spaces</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>prob-package(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   prob-package">
+<param name="keyword" value=" Elementary Probability on Finite Sample Spaces">
+</object>
+
+
+<h2>Elementary Probability on Finite Sample Spaces</h2>
+
+
+<h3>Description</h3>
+
+<p>
+This package provides a framework for performing elementary probability calculations on finite sample spaces.   It is built around the concept of a <EM>probability space</EM>, which is an object of outcomes and an object <code>probs</code> of probabilities associated with the outcomes.
+</p>
+<p>
+There are two ways to represent a probability space in the <code>prob</code> package.  The first is with a data frame that has a <code>probs</code> column.  Entries of <code>probs</code> should be nonnegative and sum to one.  The second way is with a list having two components: <code>outcomes</code> and <code>probs</code>.  The component <code>outcomes</code> is a list containing elements of the most arbitrary sort; they can be data frames, vectors, more lists, whatever.  The <code>probs</code> component is a vector (of the same length as <code>outcomes</code>), which associates to each element of <code>outcomes</code> a nonnegative number.  As before, the only additional requirement is that the <code>sum</code> of <code>probs</code> be one.
+</p>
+<p>
+There are functions in the <code>prob</code> package to address many topics in a standard course in elementary probability.  In particular, there are methods for setting up sample spaces, counting tools, defining probability spaces, performing set algebra, calculating probability and conditional probability, tools for simulation and checking the law of large numbers, adding random variables, and finding marginal distributions.  See <code>vignette("prob")</code> for details.
+</p>
+<p>
+There are some functions included to set up some of the standard sample spaces usually encountered in an elementary probability course.  Examples include tossing a coin, rolling a die, drawing from a 52 card deck, <EM>etc</EM>.  If you know of topics that would be of general interest and could be incorporated in the <code>prob</code> package framework, I would be happy to hear about them.  Comments and suggestions are always welcomed.
+</p>
+<p>
+The <code>prob</code> package is a first step toward addressing probability in <code>R</code>, and has been written in the spirit of simplicity.  The procedures work best to solve problems that are manageable in scope.  Users that wish to investigate especially large or intricate problems are encouraged to modify and streamline the code to suit their individual needs.
+</p>
+
+
+<h3>Details</h3>
+
+<p>
+<table summary="Rd table">
+<tr>
+  <td align="left">Package: </td>  <td align="left"> prob</td>
+</tr>
+<tr>
+  <td align="left"> Version: </td>  <td align="left"> 0.9-1</td>
+</tr>
+<tr>
+  <td align="left"> Date: </td>  <td align="left"> 2008-01-09</td>
+</tr>
+<tr>
+  <td align="left"> Depends: </td>  <td align="left"> R (&gt;= 2.1.0)</td>
+</tr>
+<tr>
+  <td align="left"> Suggests: </td>  <td align="left"> combinat</td>
+</tr>
+<tr>
+  <td align="left"> LazyLoad: </td>  <td align="left"> no</td>
+</tr>
+<tr>
+  <td align="left"> License: </td>  <td align="left"> GPL version 2 or newer</td>
+</tr>
+<tr>
+  <td align="left"> URL: </td>  <td align="left"> http://www.r-project.org, http://www.cc.ysu.edu/~gjkerns</td>
+</tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p>
+G. Jay Kerns &lt;gkerns@ysu.edu&gt;
+</p>
+<p>
+Maintainer: G. Jay Kerns &lt;gkerns@ysu.edu&gt;
+</p>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 0.9-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

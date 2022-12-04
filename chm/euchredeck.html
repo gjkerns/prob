@@ -1,0 +1,72 @@
+<html><head><title>A Deck of Playing Cards for Euchre</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>euchredeck(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   euchredeck">
+<param name="keyword" value=" A Deck of Playing Cards for Euchre">
+</object>
+
+
+<h2>A Deck of Playing Cards for Euchre</h2>
+
+
+<h3>Description</h3>
+
+<p>
+The title says it all.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+euchredeck(benny= FALSE, makespace = FALSE)
+
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>benny</code></td>
+<td>
+logical.</td></tr>
+<tr valign="top"><td><code>makespace</code></td>
+<td>
+logical.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+This is a conventional Euchre deck which uses a deck of 24 standard playing cards consisting of Ace, King, Queen, Jack, 10, and 9 of each of the four suits.   If <code>benny = TRUE</code> then a Joker is added to the deck.
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+A data frame with columns <code>value</code> and <code>suit</code>, and optionally a column of equally likely <code>probs</code>.</p>
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="cards.html">cards</a></code>, <code><a href="tosscoin.html">tosscoin</a></code>, and <code><a href="roulette.html">roulette</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+euchredeck()
+euchredeck(benny = TRUE, makespace = TRUE)
+</pre>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 0.9-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

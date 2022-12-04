@@ -1,0 +1,91 @@
+<html><head><title>Probability Spaces</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>probspace(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   probspace">
+<param name="keyword" value="R:   probspace.default">
+<param name="keyword" value="R:   probspace.list">
+<param name="keyword" value=" Probability Spaces">
+</object>
+
+
+<h2>Probability Spaces</h2>
+
+
+<h3>Description</h3>
+
+<p>
+Forms a probability space from a set of outcomes and (optional) vector of probabilities.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+probspace(x, ...)
+
+## Default S3 method:
+probspace(x, probs, ...)
+
+## S3 method for class 'list':
+probspace(x, probs, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+a vector, data frame, or list of outcomes.</td></tr>
+<tr valign="top"><td><code>probs</code></td>
+<td>
+a vector of non-negative weights of the same length as <code>outcomes</code></td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+further arguments to be passed to or from other methods.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+The elements of <code>probs</code> will be normalized to ensure that their sum is one.  If <code>probs</code> is not specified, then the equally likely model is assumed in which every outcome has the same probability.
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+If <code>outcomes</code> is a vector or data frame, then the value is a data frame with
+an added <code>probs</code> column.  If <code>outcomes</code> is a list, then the value is a list with
+components <code>outcomes</code> (the supplied list) and a <code>probs</code> component.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+G. Jay Kerns <a href="mailto:gkerns@ysu.edu">gkerns@ysu.edu</a>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="iidspace.html">iidspace</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+R &lt;- rolldie(3)
+probspace(R)
+</pre>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 0.9-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

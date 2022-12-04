@@ -1,0 +1,94 @@
+<html><head><title>Subsets of Probability Spaces</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>subset(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   subset">
+<param name="keyword" value="R:   subset.ps">
+<param name="keyword" value=" Subsets of Probability Spaces">
+</object>
+
+
+<h2>Subsets of Probability Spaces</h2>
+
+
+<h3>Description</h3>
+
+<p>
+This is a method for <code>subset()</code> for the case when the input object is a
+probability space of class <code>ps</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+subset(x, ...)
+
+## S3 method for class 'ps':
+subset(x, subset, ...)
+
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+a probability space.</td></tr>
+<tr valign="top"><td><code>subset</code></td>
+<td>
+logical expression indicating elements or rows of <code>space</code> to keep:
+missing values are taken as false.</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+further arguments to be passed to or from other methods.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+This function simply extends the existing <code>subset()</code> function to <code>ps</code> objects.
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+A <code>ps</code> object, a subset of a probability space.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+G. Jay Kerns <a href="mailto:gkerns@ysu.edu">gkerns@ysu.edu</a>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="intersect.html">intersect</a></code>,
+<code><a href="setdiff.html">setdiff</a></code>,
+<code><a href="union.html">union</a></code>,
+<code><a href="isin.html">isin</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+L &lt;- tosscoin(2)
+M &lt;- urnsamples(L, 3)
+N &lt;- probspace(M)
+subset(N, all(toss1=="H"))
+subset(N, any(toss2=="T"))
+</pre>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 0.9-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

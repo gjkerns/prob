@@ -1,0 +1,84 @@
+<html><head><title>Rolling a Die</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>rolldie(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   rolldie">
+<param name="keyword" value=" Rolling a Die">
+</object>
+
+
+<h2>Rolling a Die</h2>
+
+
+<h3>Description</h3>
+
+<p>
+Sets up a sample space for the experiment of rolling a die repeatedly.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+rolldie(times, nsides = 6, makespace = FALSE)
+
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>times</code></td>
+<td>
+number of rolls.</td></tr>
+<tr valign="top"><td><code>nsides</code></td>
+<td>
+number of sides on the die.</td></tr>
+<tr valign="top"><td><code>makespace</code></td>
+<td>
+logical.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+The function uses <code>expand.grid()</code> to generate all possible rolls resulting from the
+experiment of rolling a die.  Sides on the die are <code>1:nsides</code>.  Columns of the data frame are called <code>X1</code>, <code>X2</code>, up to <code>Xtimes</code>
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+A data frame, with an equally likely <code>probs</code> column if <code>makespace</code> is <code>TRUE</code>.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+G. Jay Kerns <a href="mailto:gkerns@ysu.edu">gkerns@ysu.edu</a>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="tosscoin.html">tosscoin</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+rolldie(2)
+rolldie(3, nsides = 4)
+rolldie(3, nsides = 4, makespace = TRUE)
+</pre>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 1.0-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

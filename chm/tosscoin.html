@@ -1,0 +1,81 @@
+<html><head><title>Tossing a Coin</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>tosscoin(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   tosscoin">
+<param name="keyword" value=" Tossing a Coin">
+</object>
+
+
+<h2>Tossing a Coin</h2>
+
+
+<h3>Description</h3>
+
+<p>
+Sets up a sample space for the experiment of tossing a coin
+repeatedly with the outcomes "H" or "T".
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+tosscoin( times, makespace = FALSE )
+
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>times</code></td>
+<td>
+number of tosses.</td></tr>
+<tr valign="top"><td><code>makespace</code></td>
+<td>
+logical.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+The function uses <code>expand.grid()</code> to generate all possible sequences of flips resulting from the
+experiment of tossing a coin.  Columns of the dataframe are denoted <code>toss1</code>, <code>toss2</code>, up to <code>tosstimes</code>,
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+A data frame, with an equally likely <code>probs</code> column if <code>makespace</code> is <code>TRUE</code>.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+G. Jay Kerns <a href="mailto:gkerns@ysu.edu">gkerns@ysu.edu</a>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="rolldie.html">rolldie</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+tosscoin(2)
+tosscoin(3, makespace = TRUE)
+ </pre>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 1.0-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

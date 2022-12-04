@@ -1,0 +1,76 @@
+<html><head><title>Empirical Summary of a Simulation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>empirical(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   empirical">
+<param name="keyword" value=" Empirical Summary of a Simulation">
+</object>
+
+
+<h2>Empirical Summary of a Simulation</h2>
+
+
+<h3>Description</h3>
+
+<p>
+Calculates relative frequencies of the rows of a data frame.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+empirical(x)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+a data frame.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+The function works by adding a <code>probs</code> column to <code>x</code> with equally likely entries of <i>1/n</i>, where <i>n</i> is the number of rows.  Then it aggregates the duplicated rows of <code>x</code> while accumulating the probabilities associated with each.
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+A data frame formed by aggregating the rows of <code>x</code>.  A <code>probs</code> column is added giving the relative frequencies of each of the rows.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+G. Jay Kerns <a href="mailto:gkerns@ysu.edu">gkerns@ysu.edu</a>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="sim.html">sim</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+S &lt;- tosscoin(2, makespace = TRUE)
+sims &lt;- sim(S, ntrials = 50000)
+empirical(sims)
+</pre>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 0.9-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

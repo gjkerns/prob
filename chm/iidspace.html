@@ -1,0 +1,81 @@
+<html><head><title>Independent Identical Experiments</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>iidspace(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   iidspace">
+<param name="keyword" value=" Independent Identical Experiments">
+</object>
+
+
+<h2>Independent Identical Experiments</h2>
+
+
+<h3>Description</h3>
+
+<p>
+Sets up a probability space corresponding to independent, identical experiments.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+iidspace(x, ntrials, probs = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+a vector of outcomes.</td></tr>
+<tr valign="top"><td><code>ntrials</code></td>
+<td>
+number of times to perform the experiment.</td></tr>
+<tr valign="top"><td><code>probs</code></td>
+<td>
+vector of non-negative weights corresponding to <code>x</code>.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+The elementary experiment to be repeated consists of drawing an element of <code>x</code> according to the probabilities contained in <code>probs</code>.  The entries of <code>probs</code> need not sum to one, but they will be normalized before any computations. If <code>probs</code> is not specified, the equally likely model will be assumed.
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+A data frame, with a <code>probs</code> column, where <code>probs</code> is calculated to be the probability of observing the outcome in its row under the assumption of independence and identical distribution of draws from <code>x</code>.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+G. Jay Kerns <a href="mailto:gkerns@ysu.edu">gkerns@ysu.edu</a>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="probspace.html">probspace</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+iidspace( 1:6, ntrials = 3) # same as rolldie(3)
+iidspace( 1:6, ntrials = 3, probs = 3:8 ) # unbalanced die
+</pre>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 0.9-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

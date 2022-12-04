@@ -1,0 +1,110 @@
+<html><head><title>Test Whether One Vector Is In Another Vector</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>isin(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   isin">
+<param name="keyword" value="R:   isin.default">
+<param name="keyword" value="R:   isin.data.frame">
+<param name="keyword" value=" Test Whether One Vector Is In Another Vector">
+</object>
+
+
+<h2>Test Whether One Vector Is In Another Vector</h2>
+
+
+<h3>Description</h3>
+
+<p>
+See the title.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+isin(x, ...)
+
+## Default S3 method:
+isin(x, y, ordered = FALSE, ...)
+
+## S3 method for class 'data.frame':
+isin(x, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x, y</code></td>
+<td>
+vectors.</td></tr>
+<tr valign="top"><td><code>ordered</code></td>
+<td>
+logical.</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+further arguments to be passed to or from other methods.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+The function will only return <code>TRUE</code> if every element of <code>y</code> is present in the vector <code>x</code>, counting multiplicity.  See the examples below.  Of <code>ordered = TRUE</code>, then elements must be in the vector <code>x</code> in the order specified in <code>y</code>.  Compare this to the behavior of the <code>%in%</code> function in the <code>base</code> package.
+</p>
+<p>
+This is a generic function with a moethod for data frames, which applies <code>isin()</code> to each row of the data frame, with a vector as a result.
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+Logical, or a vector of logicals.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+G. Jay Kerns <a href="mailto:gkerns@ysu.edu">gkerns@ysu.edu</a>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a onclick="findlink('base', 'countrep.html')" style="text-decoration: underline; color: blue; cursor: hand">countrep</a></code>, <code><a href="isrep.html">isrep</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+x &lt;- 1:10
+y &lt;- 3:7
+z &lt;- c(3,3,7)
+isin(x,y)
+isin(x,z)
+isin(x, c(3,4,5), ordered = TRUE)
+isin(x, c(3,5,4), ordered = TRUE)
+
+S &lt;- rolldie(4)
+subset(S, isin(S, c(2,2,6), ordered = TRUE))
+
+</pre>
+
+<script Language="JScript">
+function findlink(pkg, fn) {
+var Y, link;
+Y = location.href.lastIndexOf("\\") + 1;
+link = location.href.substring(0, Y);
+link = link + "../../" + pkg + "/chtml/" + pkg + ".chm::/" + fn;
+location.href = link;
+}
+</script>
+
+
+<hr><div align="center">[Package <em>prob</em> version 0.9-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

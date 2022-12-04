@@ -1,0 +1,93 @@
+<html><head><title>Simulate Draws from a Sample Space</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>sim(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   sim">
+<param name="keyword" value="R:   sim.default">
+<param name="keyword" value="R:   sim.ps">
+<param name="keyword" value=" Simulate Draws from a Sample Space">
+</object>
+
+
+<h2>Simulate Draws from a Sample Space</h2>
+
+
+<h3>Description</h3>
+
+<p>
+Simulates the experiment of drawing from a sample space.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+sim(x, ...)
+
+## Default S3 method:
+sim(x, ntrials, ...)
+
+## S3 method for class 'ps':
+sim(x, ntrials, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+a probability space or a subset of one.</td></tr>
+<tr valign="top"><td><code>ntrials</code></td>
+<td>
+number of times to repeat the experiment.</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+further arguments to be passed to or from other methods.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+The <code>sim()</code> function is a wrapper for <code>sample()</code>, except that it strips the <code>probs</code> component from the result and (if <code>x</code> is a data frame) renames the rownames of the data frame consecutively from <code>1:ntrials</code>.
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+A data frame if <code>space</code> is a data frame, or a list if <code>space</code> is of class <code>ps</code>.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+G. Jay Kerns <a href="mailto:gkerns@ysu.edu">gkerns@ysu.edu</a>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="empirical.html">empirical</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+S &lt;- cards(makespace = TRUE)
+sim(S, ntrials = 5)
+
+T &lt;- urnsamples(S, 2)
+U &lt;- probspace(T)
+sim(U, ntrials = 4)
+</pre>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 0.9-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

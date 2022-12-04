@@ -1,0 +1,102 @@
+<html><head><title>Number of Samples from an Urn</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>nsamp(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   nsamp">
+<param name="keyword" value=" Number of Samples from an Urn">
+</object>
+
+
+<h2>Number of Samples from an Urn</h2>
+
+
+<h3>Description</h3>
+
+<p>
+Calculates the number of samples from an urn under different sampling scenarios.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+nsamp(n, k, replace = FALSE, ordered = FALSE)
+
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>n</code></td>
+<td>
+an integer or integer vector.</td></tr>
+<tr valign="top"><td><code>k</code></td>
+<td>
+an integer or integer vector.</td></tr>
+<tr valign="top"><td><code>replace</code></td>
+<td>
+logical indicating whether sampling should be done with replacement.</td></tr>
+<tr valign="top"><td><code>ordered</code></td>
+<td>
+logical indicating whether order among samples is important.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+The <code>nsamp()</code> function will calculate the number of samples from an urn under assorted assumptions on the sampling procedure.  The arguments are: <code>n</code>, the number of (distinguishable) objects in the urn, <code>k</code>, the sample size, and <code>replace</code>, <code>ordered</code> as documented in <code><a href="urnsamples.html">urnsamples</a></code>.
+</p>
+<p>
+<code>nsamp()</code> is vectorized, so that entering vectors instead of numbers for <code>n</code>, <code>k</code>, <code>replace</code>, and <code>ordered</code> results in a vector of corresponding answers.
+</p>
+<p>
+The formulas used in the four possible combinations of <code>replace</code> and <code>ordered</code> are as follows.
+<ul>
+<li>When <code>replace = TRUE</code> and <code>ordered = TRUE</code>, the value is <i>n^k</i>.
+<li>When <code>replace = FALSE</code> and  <code>ordered = TRUE</code>, the value is
+<i>n!/(n-k)!</i>.
+<li>When <code>replace = FALSE</code> and <code>ordered = FALSE</code>, the value is
+<i>n!/[k!(n-k)!]</i>.
+<li>When <code>replace = TRUE</code> and  <code>ordered = FALSE</code>, the value is
+<i>(n-1+k)!/[(n-1)!k!]</i>.
+</p>
+<p>
+</ul>
+
+<h3>Value</h3>
+
+<p>
+A number.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+G. Jay Kerns <a href="mailto:gkerns@ysu.edu">gkerns@ysu.edu</a>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="urnsamples.html">urnsamples</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+nsamp(n=3, k=2, replace = TRUE, ordered = TRUE)
+nsamp(n=3, k=2, replace = TRUE, ordered = FALSE)
+nsamp(n=3, k=2, replace = FALSE, ordered = FALSE)
+nsamp(n=3, k=2, replace = FALSE, ordered = TRUE)
+</pre>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 0.9-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

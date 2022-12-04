@@ -1,0 +1,100 @@
+<html><head><title>Sampling from Urns</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>urnsamples(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   urnsamples">
+<param name="keyword" value="R:   urnsamples.default">
+<param name="keyword" value="R:   urnsamples.data.frame">
+<param name="keyword" value=" Sampling from Urns">
+</object>
+
+
+<h2>Sampling from Urns</h2>
+
+
+<h3>Description</h3>
+
+<p>
+This function creates a sample space associated with the experiment of sampling distinguishable objects from an urn.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+urnsamples(x, ...)
+
+## Default S3 method:
+urnsamples(x, size, replace = FALSE, ordered = FALSE, ...)
+
+## S3 method for class 'data.frame':
+urnsamples(x, size, replace = FALSE, ordered = FALSE, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+a vector or data frame from which sampling should take place.</td></tr>
+<tr valign="top"><td><code>size</code></td>
+<td>
+number indicating the sample size.</td></tr>
+<tr valign="top"><td><code>replace</code></td>
+<td>
+logical indicating whether sampling should be done with replacement.</td></tr>
+<tr valign="top"><td><code>ordered</code></td>
+<td>
+logical indicating whether order among samples is important.</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+further arguments to be passed to or from other methods.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+The function operates on the indices of the urn (or rows, in the case <code>urn</code> is a data frame).  It then takes those samples and substitutes back into <code>urn</code> to generate the entries of the data frame (or list, respectively).  In the case that <code>urn</code> has repeated values, the result will be repeated values in the output.
+</p>
+<p>
+Note that <code>urnsamples</code> strips <code>x</code> of any existing <code>probs</code> column before sampling.
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+A data frame if <code>urn</code> is a vector, and a list if <code>urn</code> is a data frame.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+G. Jay Kerns <a href="mailto:gkerns@ysu.edu">gkerns@ysu.edu</a>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="iidspace.html">iidspace</a></code>, <code><a href="probspace.html">probspace</a></code>
+<code><a href="nsamp.html">nsamp</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+urnsamples(1:10, size = 5)
+S &lt;- cards()
+urnsamples(S, size = 2)
+</pre>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 0.9-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

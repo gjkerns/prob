@@ -1,0 +1,75 @@
+<html><head><title>Testing for a Probability Space</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>is.probspace(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   is.probspace">
+<param name="keyword" value=" Testing for a Probability Space">
+</object>
+
+
+<h2>Testing for a Probability Space</h2>
+
+
+<h3>Description</h3>
+
+<p>
+Decides whether a given object is a probability space.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+is.probspace(x)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+an object for which probability space status should be checked.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+It first checks if the class of the object includes <code>ps</code>, and if so <code>TRUE</code> is returned.  If not, then it checks that the object is a data frame and contains a <code>probs</code> column.  Lastly, it checks whether all entries of <code>probs</code> are nonnegative.   Note that it does not check whether the sum of <code>probs</code> is one, to allow for the possibility that the input object is a proper subset of a probability space.
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+Logical.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+G. Jay Kerns <a href="mailto:gkerns@ysu.edu">gkerns@ysu.edu</a>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="probspace.html">probspace</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+S &lt;- rolldie(3, makespace = TRUE)
+is.probspace(S)
+</pre>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 0.9-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

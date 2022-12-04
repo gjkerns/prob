@@ -1,0 +1,102 @@
+<html><head><title>Probability and Conditional Probability</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>prob(prob)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   prob">
+<param name="keyword" value="R:   prob.default">
+<param name="keyword" value="R:   prob.ps">
+<param name="keyword" value=" Probability and Conditional Probability">
+</object>
+
+
+<h2>Probability and Conditional Probability</h2>
+
+
+<h3>Description</h3>
+
+<p>
+Calculates probability and conditional probability of events.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+prob(x, ...)
+
+## Default S3 method:
+prob(x, event = NULL, given = NULL, ...)
+
+## S3 method for class 'ps':
+prob(x, event = NULL, given = NULL, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+a probability space or a subset of one.</td></tr>
+<tr valign="top"><td><code>event</code></td>
+<td>
+logical expression indicating elements or rows of <code>space</code> to keep:
+missing values are taken as false.</td></tr>
+<tr valign="top"><td><code>given</code></td>
+<td>
+either a subset of a probability space or a logical expression indicating elements or rows of <code>space</code> to keep:
+missing values are taken as false.</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+further arguments to be passed to or from other methods.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+This function calculates the probability of events or subsets of a given sample space.
+Conditional probability is also implemented.  In essence, the <code>prob()</code> function operates by summing the <code>probs</code> column of its argument.  It will find subsets on the fly if desired.  
+</p>
+<p>
+The <code>event</code> argument is used to define a subset of <code>x</code>, that is, the only outcomes used in the probability calculation will be those that are elements of <code>x</code> and satisfy <code>event</code> simultaneously. In other words, <code>prob(x,event)</code> calculates <code>prob(intersect(x, subset(x, event)))</code>.  Consequently, <code>x</code> should be the entire probability space in the case that <code>event</code> is non-null.
+</p>
+<p>
+There is some flexibility in the <code>given</code> argument in that it can be either a data frame or it can be a logical expression that defines the subset.  However, that flexibility is limited.  In particular, if <code>given</code> is a logical expression, then <code>event</code> must also be specified (also a logical expression).  And in this case, the argument <code>x</code> should be the entire sample space, not a subset thereof.
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+A number in the interval <code>[0,1]</code>.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+G. Jay Kerns <a href="mailto:gkerns@ysu.edu">gkerns@ysu.edu</a>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="probspace.html">probspace</a></code>, <code><a href="iidspace.html">iidspace</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+S &lt;- rolldie(times = 3, makespace = TRUE )
+prob(S, X1+X2 &gt; 9 )
+prob(S, X1+X2 &gt; 9, given = X1+X2+X3 &gt; 7 )
+</pre>
+
+
+
+<hr><div align="center">[Package <em>prob</em> version 0.9-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>
