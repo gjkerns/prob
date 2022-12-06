@@ -1,6 +1,6 @@
 
 
-
+#' @export
 `cards` <- function (jokers = FALSE, makespace = FALSE){
     x <- c(2:10, "J", "Q", "K", "A")
     y <- c("Club", "Diamond", "Heart", "Spade")
@@ -16,7 +16,7 @@
     return(res)
 }
 
-
+#' @export
 `euchredeck` <- function (benny = FALSE, makespace = FALSE){
     x <- c(9:10, "J", "Q", "K", "A")
     y <- c("Club", "Diamond", "Heart", "Spade")
@@ -32,7 +32,7 @@
 }
 
 
-
+#' @export
 `rolldie` <- function (times, nsides = 6, makespace = FALSE){
     temp = list()
     for (i in 1:times) {
@@ -46,7 +46,7 @@
 }
 
 
-
+#' @export
 `roulette` <- function (european = FALSE, makespace = FALSE){
     if (european) {
         num = c("0", "26", "3", "35", "12", "28", "7", "29", 
@@ -82,10 +82,11 @@
 #' `toss2`, up to `tosstimes`.
 #' @param times number of tosses.
 #' @param makespace logical.
-#' @return  A data frame, with an equally likely \code{probs} column if \code{makespace} is \code{TRUE}.
+#' @return  A data frame, with an equally likely `probs` column if `makespace` is `TRUE`.
 #' @examples
 #' tosscoin(2)
 #' tosscoin(3, makespace = TRUE)
+#' @export
 `tosscoin` <- function (times, makespace = FALSE){
     temp <- list()
     for (i in 1:times) {
@@ -99,11 +100,35 @@
 }
 
 
-
+#' Sampling from urns
+#' 
+#' This function creates a sample space associated with the experiment of sampling 
+#' distinguishable objects from an urn.
+#' 
+#' The function operates on the indices of the urn (or rows, in the case `urn` 
+#' is a data frame).  It then takes those samples and substitutes back into `urn` 
+#' to generate the entries of the data frame (or list, respectively).  In the 
+#' case that `urn` has repeated values, the result will be repeated values 
+#' in the output.
+#' 
+#' Note that `urnsamples` strips `x` of any existing `probs` 
+#' column before sampling.
+#' @param x a vector or data frame from which sampling should take place.
+#' @param size number indicating the sample size.
+#' @param replace logical indicating whether sampling should be done with replacement.
+#' @param ordered logical indicating whether order among samples is important.
+#' @param ... further arguments to be passed to or from other methods.
+#' @return A data frame if `urn` is a vector, and a list if `urn` is a data frame.
+#' @examples
+#' urnsamples(1:10, size = 5)
+#' S <- cards()
+#' urnsamples(S, size = 2)
 `urnsamples` <- function (x, ...)
 UseMethod("urnsamples")
 
 
+#' @method urnsamples data.frame
+#' @export
 `urnsamples.data.frame` <- function (x, size, replace = FALSE, ordered = FALSE, ...){
     nurn <- dim(x)[1]
     if (isTRUE(replace)) {
@@ -144,7 +169,8 @@ UseMethod("urnsamples")
 }
 
 
-
+#' @method urnsamples default
+#' @export
 `urnsamples.default` <- function (x, size, replace = FALSE, ordered = FALSE, ...){
     nurn <- length(x)
     if (isTRUE(replace)) {

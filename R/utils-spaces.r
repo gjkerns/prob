@@ -1,5 +1,5 @@
 
-
+#' @export
 `addrv` <- function (space, FUN = NULL, invars = NULL, name = NULL, ...){
     if (any(class(space) == "ps")) 
         stop("not implemented for class 'ps'")
@@ -29,7 +29,7 @@
 }
 
 
-
+#' @export
 `marginal` <- function (space, vars = NULL){
     if (!is.data.frame(space) | is.null(space$probs)) {
         message("'space' is not a proper probability space")
@@ -52,7 +52,7 @@
     return(res)
 }
 
-
+#' @export
 `noorder` <- function (space){
     if (!is.data.frame(space)) {
         message("'space' is missing a probs column")

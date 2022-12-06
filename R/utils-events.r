@@ -1,13 +1,14 @@
 
-
+#' @export
 `countrep` <- function (x, ...)
 UseMethod("countrep")
 
+#' @export
 `countrep.data.frame` <- function (x, ...){
     apply(x, MARGIN = 1, FUN = countrep, ...)
 }
 
-
+#' @export
 `countrep.default` <- function (x, vals = unique(x), nrep = 2, ...){
     res <- 0
     if (length(x) >= nrep) {
@@ -21,17 +22,17 @@ UseMethod("countrep")
     return(res)
 }
 
-
+#' @export
 `isin` <- function (x, ...)
 UseMethod("isin")
 
 
-
+#' @export
 `isin.data.frame` <- function (x, ...){
     apply(x, MARGIN = 1, FUN = isin, ...)
 }
 
-
+#' @export
 `isin.default` <- function (x, y, ordered = FALSE, ...){
     res <- (length(y) <= length(x))
     if (res) {
@@ -55,17 +56,17 @@ UseMethod("isin")
 }
 
 
-
+#' @export
 `isrep` <- function (x, ...)
 UseMethod("isrep")
 
-
+#' @export
 `isrep.data.frame` <- function (x, ...){
     apply(x, MARGIN = 1, FUN = isrep, ...)
 }
 
 
-
+#' @export
 `isrep.default` <- function (x, vals = unique(x), nrep = 2, ...){
     res <- FALSE
     if (length(x) >= nrep) {

@@ -12,7 +12,7 @@ tosscoin(times, makespace = FALSE)
 \item{makespace}{logical.}
 }
 \value{
-A data frame, with an equally likely \code{probs} column if \code{makespace} is \code{TRUE}.
+A data frame, with an equally likely `probs` column if `makespace` is `TRUE`.
 }
 \description{
 Sets up a sample space for the experiment of tossing a coin repeatedly with the outcomes "H" or "T".

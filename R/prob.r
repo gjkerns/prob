@@ -1,12 +1,15 @@
 
+#' @export
 `Prob` <- function (x, ...)
 UseMethod("Prob")
 
+#' @export
 `prob` <- function (x, ...){
     message("'prob' is deprecated; use 'Prob' instead.")
     Prob(x, ...)
 }
 
+#' @export
 `Prob.default` <- function (x, event = NULL, given = NULL, ...){
     if (is.null(x$probs)) {
         message("'space' is missing a probs column")
@@ -49,7 +52,7 @@ UseMethod("Prob")
     return(p)
 }
 
-
+#' @export
 `Prob.ps` <- function (x, event = NULL, given = NULL, ...){
     if (is.null(x$probs)) {
         message("'space' is missing a probs component")

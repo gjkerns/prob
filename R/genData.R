@@ -5,6 +5,7 @@
 #######################################################
 # continuous X data
 
+#' @export
 genXdata <- function(n, nvar = 1,
                      mu = rep(0, nvar),
                      Sigma = diag(length(mu)),
@@ -25,6 +26,7 @@ genXdata <- function(n, nvar = 1,
 #######################################################
 # logistic regression data
 
+#' @export
 genLogRegData <- function(xdata,
                           beta = rep(1, ncol(xdata)),
                           yname = "y"){
@@ -46,6 +48,7 @@ genLogRegData <- function(xdata,
 ######################################################3
 # contingency tables
 
+#' @export
 genIndepTable <- function(n = sample(100:500, size = 1),
                           prow = 1:3, pcol = 1:4,
                           dmnames = list(X = paste("x", 1:length(prow), sep = ""),
@@ -100,6 +103,7 @@ genIndepTable <- function(n = sample(100:500, size = 1),
 ######################################################3
 # general two-way tables
 
+#' @export
 gen2wayTable <- function(n = sample(100:500, size = 1),
                           pmatrix = matrix(1:12, nrow = 3),
                           dmnames = list(X = paste("x", 1:nrow(pmatrix), sep = ""),

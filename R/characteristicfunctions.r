@@ -19,7 +19,7 @@
 #      }
 #  }
 
-
+#' @export
 cfbinom <- function(t, size, prob){
     if (size <= 0 )
         stop("size must be positive")
@@ -28,19 +28,21 @@ cfbinom <- function(t, size, prob){
     (prob*exp(1i*t) + (1 - prob))^size
 }
 
-
+#' @export
 cfcauchy = function(t, location = 0, scale = 1){
     if (scale <= 0 )
         stop("scale must be positive")
     exp(1i*location*t - scale*abs(t))  
 }
 
+#' @export
 cfchisq <- function(t, df, ncp = 0){
     if (df < 0 || ncp < 0  )
         stop("df and ncp must be nonnegative")
     exp(1i*ncp*t/(1-2i*t))/(1 - 2i*t)^(df/2)
 }
 
+#' @export
 cfexp <- function(t, rate = 1){
     cfgamma(t, shape = 1, scale = 1/rate)
 }
@@ -60,25 +62,26 @@ cfexp <- function(t, rate = 1){
 #  }
 
 
+#' @export
 cfgamma <- function(t, shape, rate = 1, scale = 1/rate){
     if (rate <= 0  || scale <= 0)
         stop("rate must be positive")
     (1-scale*1i*t)^(-shape)
 }
 
-
+#' @export
 cfgeom <- function(t, prob){
     cfnbinom(t, size = 1, prob = prob)
 }
 
-
+#' @export
 cfhyper <- function(t, m, n, k){
     if (m < 0 || n < 0 || k < 0)
         stop("m, n, k must be positive")
     hypergeo::hypergeo(-k, -m, n - k + 1, exp(1i*t))/hypergeo::hypergeo(-k, -m, n - k + 1, 1)
 }
 
-
+#' @export
 cflnorm <- function(t, meanlog = 0, sdlog = 1){
     if (sdlog <= 0)
         stop("sdlog must be positive")
@@ -94,7 +97,7 @@ cflnorm <- function(t, meanlog = 0, sdlog = 1){
     }
 }
 
-
+#' @export
 cflogis <- function(t, location = 0, scale = 1){
     if (scale <= 0)
         stop("scale must be positive")
@@ -103,7 +106,7 @@ cflogis <- function(t, location = 0, scale = 1){
             return(exp(1i*location)*pi*scale*t/sinh(pi*scale*t)))
 }
 
-
+#' @export
 cfnbinom <- function(t, size, prob, mu){
     if (size <= 0 )
         stop("size must be positive")
@@ -117,25 +120,26 @@ cfnbinom <- function(t, size, prob, mu){
     (prob/(1-(1-prob)*exp(1i*t)))^size
 }
 
-
+#' @export
 cfnorm <- function(t, mean = 0, sd = 1){
     if (sd <= 0)
         stop("sd must be positive")
     exp(1i*mean - (sd*t)^2/2)  
 }
 
+#' @export
 cfpois <- function(t, lambda){
     if (lambda <= 0)
         stop("lambda must be positive")
     exp(lambda*(exp(1i*t) - 1))
 }
 
-
+#' @export
 cfsignrank <- function(t, n){
     sum(exp(1i*t*0:((n+1)*n/2)) * dsignrank(0:((n+1)*n/2), n))
 }
 
-
+#' @export
 cft <- function(t, df, ncp){
     if(missing(ncp)) ncp <- 0
     if (df <= 0)
@@ -153,7 +157,7 @@ cft <- function(t, df, ncp){
     }
 }
 
-
+#' @export
 cfunif <- function(t, min = 0, max = 1){
     if (max < min)
         stop("min cannot be greater than max")
@@ -162,7 +166,7 @@ cfunif <- function(t, min = 0, max = 1){
             (exp(1i*t*max) - exp(1i*t*min))/(1i*t*(max - min)))
 }
 
-
+#' @export
 cfweibull <- function(t, shape, scale = 1){
     if (shape <= 0 || scale <= 0)
         stop("shape and scale must be positive")
@@ -173,11 +177,9 @@ cfweibull <- function(t, shape, scale = 1){
     return( Rp + 1i*Ip )
 }
 
-
+#' @export
 cfwilcox <- function(t, m, n){
     sum(exp(1i*t*0:(m*n)) * dwilcox(0:(m*n), m, n))
 }
-
-
 
 

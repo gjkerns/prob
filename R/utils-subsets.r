@@ -1,10 +1,10 @@
 
 
-
+#' @export
 `intersect` <- function (x, ...)
 UseMethod("intersect")
 
-
+#' @export
 `intersect.data.frame` <- function (x, y, ...){
     a <- do.call("paste", c(x, sep = "\r"))
     b <- do.call("paste", c(y, sep = "\r"))
@@ -12,14 +12,14 @@ UseMethod("intersect")
 }
 
 
-
+#' @export
 `intersect.default` <- function (x, y, ...){
     y <- as.vector(y)
     unique(y[match(as.vector(x), y, 0)])
 }
 
 
-
+#' @export
 `intersect.ps` <- function (x, y, ...){
     a <- do.call("paste", c(x, sep = "\r"))
     b <- do.call("paste", c(y, sep = "\r"))
@@ -30,18 +30,18 @@ UseMethod("intersect")
 }
 
 
-
+#' @export
 `setdiff` <- function (x, ...)
 UseMethod("setdiff")
 
-
+#' @export
 `setdiff.data.frame` <- function (x, y, ...){
     a <- do.call("paste", c(x, sep = "\r"))
     b <- do.call("paste", c(y, sep = "\r"))
     x[match(setdiff(a, b), a), ]
 }
 
-
+#' @export
 `setdiff.default` <- function (x, y, ...){
     x <- as.vector(x)
     y <- as.vector(y)
@@ -50,7 +50,7 @@ UseMethod("setdiff")
     else x)
 }
 
-
+#' @export
 `setdiff.ps` <- function (x, y, ...){
     a <- do.call("paste", c(x, sep = "\r"))
     b <- do.call("paste", c(y, sep = "\r"))
@@ -60,7 +60,7 @@ UseMethod("setdiff")
     return(res)
 }
 
-
+#' @export
 `subset.ps` <- function (x, subset, ...){
     e <- substitute(subset)
     r <- sapply(x$outcomes, function(t) {
@@ -74,22 +74,22 @@ UseMethod("setdiff")
     return(res)
 }
 
-
+#' @export
 `union` <- function (x, ...)
 UseMethod("union")
 
-
+#' @export
 `union.data.frame` <- function (x, y, ...){
     res <- unique(rbind(as.data.frame(y), x))
     res[order(as.numeric(rownames(res))), ]
 }
 
 
-
+#' @export
 `union.default` <- function (x, y, ...)
 unique(c(as.vector(x), as.vector(y)))
 
-
+#' @export
 `union.ps` <- function (x, y, ...){
     na <- length(x$outcomes)
     nb <- length(y$outcomes)

@@ -1,6 +1,6 @@
 
 
-
+#' @export
 `iidspace` <- function (x, ntrials, probs = NULL){
     temp = list()
     for (i in 1:ntrials) {
@@ -32,7 +32,7 @@
 }
 
 
-
+#' @export
 `is.probspace` <- function (x){
     if (any(class(x) == "ps")) 
         return(TRUE)
@@ -44,12 +44,12 @@
 }
 
 
-
+#' @export
 `probspace` <- function (x, ...)
 UseMethod("probspace")
 
 
-
+#' @export
 `probspace.default` <- function (x, probs, ...){
     y <- data.frame(x)
     if (missing(probs)) {
@@ -64,7 +64,23 @@ UseMethod("probspace")
     return(y)
 }
 
+#' @export
+`probspace.data.frame` <- function (x, probs, ...){
+  y <- data.frame(x)
+  if (missing(probs)) {
+    y$probs <- rep(1, dim(y)[1])/dim(y)[1]
+  }
+  else {
+    if (any(probs < 0)) {
+      stop("'probs' contains negative values")
+    }
+    y$probs <- probs/sum(probs)
+  }
+  return(y)
+}
 
+
+#' @export
 `probspace.list` <- function (x, probs, ...){
     y <- x
     if (missing(probs)) {

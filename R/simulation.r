@@ -1,5 +1,5 @@
 
-
+#' @export
 `empirical` <- function (x){
     if (any(class(x) == "ps")) 
         stop("not implemented for class 'ps'")
@@ -13,11 +13,11 @@
 }
 
 
-
+#' @export
 `sim` <- function (x, ...)
 UseMethod("sim")
 
-
+#' @export
 `sim.default` <- function (x, ntrials, ...){
     out <- data.frame(x[, -which(names(x) == "probs")])
     names(out) <- names(x)[-which(names(x) == "probs")]
@@ -31,7 +31,7 @@ UseMethod("sim")
 }
 
 
-
+#' @export
 `sim.ps` <- function (x, ntrials, ...){
     out <- x$outcomes
     p <- x$probs

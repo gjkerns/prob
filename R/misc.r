@@ -1,5 +1,5 @@
 
-
+#' @export
 `nsamp` <- function (n, k, replace = FALSE, ordered = FALSE){
     m <- length(n)
     if (length(k) != m) 
@@ -31,7 +31,7 @@
 }
 
 
-
+#' @export
 `permsn` <- function (x, m)
 {
 
