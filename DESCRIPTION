@@ -1,9 +1,9 @@
 Package: prob
 Version: 1.0-1
-Date: 2018-08-27
+Date: 2022-12-05
 Title: Elementary Probability on Finite Sample Spaces
 Authors@R: person(given = "G. Jay", family = "Kerns", role = c("aut", "cre", "cph"), email = "gkerns@ysu.edu")
-Depends: combinat, fAsianOptions
+Depends: combinat
 Suggests: VGAM, reshape, MASS, hypergeo
 Description:
  A framework for performing elementary probability

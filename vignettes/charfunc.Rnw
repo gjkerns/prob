@@ -122,56 +122,57 @@ and appreciative of a reference for these cases to be improved.
 The formulas for all characteristic functions supported in the \Rpackage{prob}
 package are listed below, in alphabetical order of the function name.
 
+% cannot use because fAsianOptions not available
 
-\subsection{Beta distribution: \texttt{cfbeta(t, shape1, shape2, ncp = 0)}\label{sub:Beta-distribution}}
-
-Let $\alpha$ and $\beta$ denote the \texttt{shape1} and \texttt{shape2}
-parameters, respectively. The p.d.f.~is then\[
-f_{X}(x)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\, x^{\alpha-1}(1-x)^{\beta-1},\quad0<x<1,\]
-where $\Gamma$ is the \emph{gamma function} defined by\[
-\Gamma(\alpha)=\int_{0}^{\infty}u^{\alpha-1}\me^{-u}\,\d u,\quad\alpha\neq0,\,-1,\,-2,\,\ldots.\]
-The characteristic function is given by\[
-\phi_{X}(t)={}_{1}F_{1}(\alpha;\,\alpha+\beta;\, it),\]
-where $_{1}F_{1}$ is \emph{Kummer's confluent hypergeometric function
-of the first kind}, also known as Kummer's $M$, defined by \[
-_{1}F_{1}(a;b;z)=\sum_{n=0}^{\infty}\frac{(a)_{n}z^{n}}{(b)_{n}n!},\]
-with $(a)_{n}=a(a+1)(a+2)\cdots(a+n-1)$ the \emph{rising factorial}.
-We calculate $_{1}F_{1}$ using \texttt{kummerM} in the \Rpackage{fAsianOptions}
-package. 
-
-As of the time of this writing, it seems that we must resort to calculating
-the characteristic function for the noncentral Beta by numerical integration
-according to the definition; see the source below. If you are aware
-of a way to more quickly/reliably calculate this c.f.~with \textsf{R},
-I would appreciate it if you would let me know.
-
-
-\paragraph*{Source Code:}
-
-\begin{Schunk}
-\begin{Soutput}
-function (t, shape1, shape2, ncp = 0) 
-{
-    if (shape1 <= 0 || shape2 <= 0) 
-        stop("shape1, shape2 must be positive")
-    if (identical(all.equal(ncp, 0), TRUE)) {
-        require(fAsianOptions)
-        kummerM((0+1i) * t, shape1, shape1 + shape2)
-    }
-    else {
-        fr <- function(x) cos(t * x) * dbeta(x, shape1, shape2, 
-            ncp)
-        fi <- function(x) sin(t * x) * dbeta(x, shape1, shape2, 
-            ncp)
-        Rp <- integrate(fr, lower = 0, upper = 1)$value
-        Ip <- integrate(fi, lower = 0, upper = 1)$value
-        return(Rp + (0+1i) * Ip)
-    }
-}
-<environment: namespace:prob>
-\end{Soutput}
-\end{Schunk}
-
+% \subsection{Beta distribution: \texttt{cfbeta(t, shape1, shape2, ncp = 0)}\label{sub:Beta-distribution}}
+% 
+% Let $\alpha$ and $\beta$ denote the \texttt{shape1} and \texttt{shape2}
+% parameters, respectively. The p.d.f.~is then\[
+% f_{X}(x)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\, x^{\alpha-1}(1-x)^{\beta-1},\quad0<x<1,\]
+% where $\Gamma$ is the \emph{gamma function} defined by\[
+% \Gamma(\alpha)=\int_{0}^{\infty}u^{\alpha-1}\me^{-u}\,\d u,\quad\alpha\neq0,\,-1,\,-2,\,\ldots.\]
+% The characteristic function is given by\[
+% \phi_{X}(t)={}_{1}F_{1}(\alpha;\,\alpha+\beta;\, it),\]
+% where $_{1}F_{1}$ is \emph{Kummer's confluent hypergeometric function
+% of the first kind}, also known as Kummer's $M$, defined by \[
+% _{1}F_{1}(a;b;z)=\sum_{n=0}^{\infty}\frac{(a)_{n}z^{n}}{(b)_{n}n!},\]
+% with $(a)_{n}=a(a+1)(a+2)\cdots(a+n-1)$ the \emph{rising factorial}.
+% We calculate $_{1}F_{1}$ using \texttt{kummerM} in the \Rpackage{fAsianOptions}
+% package. 
+% 
+% As of the time of this writing, it seems that we must resort to calculating
+% the characteristic function for the noncentral Beta by numerical integration
+% according to the definition; see the source below. If you are aware
+% of a way to more quickly/reliably calculate this c.f.~with \textsf{R},
+% I would appreciate it if you would let me know.
+% 
+% 
+% \paragraph*{Source Code:}
+% 
+% \begin{Schunk}
+% \begin{Soutput}
+% function (t, shape1, shape2, ncp = 0) 
+% {
+%     if (shape1 <= 0 || shape2 <= 0) 
+%         stop("shape1, shape2 must be positive")
+%     if (identical(all.equal(ncp, 0), TRUE)) {
+%         require(fAsianOptions)
+%         kummerM((0+1i) * t, shape1, shape1 + shape2)
+%     }
+%     else {
+%         fr <- function(x) cos(t * x) * dbeta(x, shape1, shape2, 
+%             ncp)
+%         fi <- function(x) sin(t * x) * dbeta(x, shape1, shape2, 
+%             ncp)
+%         Rp <- integrate(fr, lower = 0, upper = 1)$value
+%         Ip <- integrate(fi, lower = 0, upper = 1)$value
+%         return(Rp + (0+1i) * Ip)
+%     }
+% }
+% <environment: namespace:prob>
+% \end{Soutput}
+% \end{Schunk}
+% 
 
 \subsection{Binomial distribution: \texttt{cfbinom(t, size, prob)}}
 
@@ -275,58 +276,60 @@ function (t, rate = 1)
 \end{Schunk}
 
 
-\subsection{$F$ Distribution: \texttt{cff(t, df1, df2, ncp, kmax = 10)}}
-
-Let $p$ and $q$ denote the \texttt{df1} and \texttt{df2} parameters,
-respectively, and let $\lambda$ denote the noncentrality parameter
-\texttt{ncp}. We may write the p.d.f.~for the central $F$ distribution
-($\lambda=0$) with\[
-f_{X}(x)=\frac{\Gamma[(p+q)/2]}{\Gamma(p/2)\Gamma(q/2)}\,\left(\frac{p}{q}\right)^{p/2}\, x^{p/2-1}\,\left(1+\frac{p}{q}x\right)^{-(p+q)/2},\quad x>0.\]
-The characteristic function for central $F$ is given by\[
-\phi_{X}(t)=\frac{\Gamma[(p+q)/2]}{\Gamma(q/2)}\Psi\left(\frac{p}{2},\,1-\frac{q}{2};\,-\frac{q}{p}it\right),\]
-where $\Psi$ is \emph{Kummer's confluent hypergeometric function
-of the second kind}, also known as Kummer's $U$, defined by\[
-\Psi(a,b;z)=\frac{\pi}{\sin\,\pi b}\left(\frac{_{1}F_{1}(a;b;z)}{\Gamma(1+a-b)\Gamma(b)}-z^{1-b}\frac{_{1}F_{1}(1+a-b;\,2-b;\, z)}{\Gamma(a)\Gamma(2-b)}\right).\]
-See \cite{confHyp} in the references. Kummer's $U$ is calculated
-with \texttt{kummerU}, again from the \Rpackage{fAsianOptions} package. 
-
-The p.d.f.~of the noncentral $F$ distribution ($\lambda\neq0$)
-as\[
-f_{X}(x)=f_{p,q}(x)\,\me^{-\lambda/2}\sum_{k=0}^{\infty}\left\{ \left(\frac{\frac{1}{2}\lambda px}{q+px}\right)^{k}\cdot\frac{(p+q)(p+q+2)\cdots(p+q+2\cdot\overline{k-1})}{k!\, p(p+2)\cdots(p+2\cdot\overline{k-1})}\right\} ,\quad x>0,\]
-where $f_{p,q}$ is the p.d.f.~of the central $F$ distribution.
-The characteristic function for the noncentral $F$ distribution is
-given by \[
-\phi_{X}(t)=\me^{-\lambda/2}\sum_{k=0}^{\infty}\frac{(\lambda/2)^{k}}{k!}{}_{1}F_{1}\left(\frac{p}{2}+k;\,-\frac{q}{2};\,-\frac{qit}{p}\right),\]
-where $_{1}F_{1}$ is Kummer's confluent hypergeometric function of
-the first kind defined above; see Section \ref{sub:Beta-distribution}.
-For the purposes of calculation, we may only use a finite sum to approximate
-the infinite series, thus the user should specify an upper value of
-$k$ to be used, denoted \texttt{kmax}, which has the default value
-of \texttt{kmax} = 10. 
-
-
-\paragraph*{Source Code:}
-
-\begin{Schunk}
-\begin{Soutput}
-function (t, df1, df2, ncp, kmax = 10) 
-{
-    if (df1 <= 0 || df2 <= 0) 
-        stop("df1 and df2 must be positive")
-    require(fAsianOptions)
-    if (identical(all.equal(ncp, 0), TRUE)) {
-        gamma((df1 + df2)/2)/gamma(df2/2) * kummerU(-(0+1i) * 
-            df2 * t/df1, df1/2, 1 - df2/2)
-    }
-    else {
-        exp(-ncp/2) * sum((ncp/2)^(0:kmax)/factorial(0:kmax) * 
-            kummerM(-(0+1i) * df2 * t/df1, df1/2 + 0:kmax, -df2/2))
-    }
-}
-<environment: namespace:prob>
-\end{Soutput}
-\end{Schunk}
-
+% cannot use because fAsianOptions not available
+%
+% \subsection{$F$ Distribution: \texttt{cff(t, df1, df2, ncp, kmax = 10)}}
+% 
+% Let $p$ and $q$ denote the \texttt{df1} and \texttt{df2} parameters,
+% respectively, and let $\lambda$ denote the noncentrality parameter
+% \texttt{ncp}. We may write the p.d.f.~for the central $F$ distribution
+% ($\lambda=0$) with\[
+% f_{X}(x)=\frac{\Gamma[(p+q)/2]}{\Gamma(p/2)\Gamma(q/2)}\,\left(\frac{p}{q}\right)^{p/2}\, x^{p/2-1}\,\left(1+\frac{p}{q}x\right)^{-(p+q)/2},\quad x>0.\]
+% The characteristic function for central $F$ is given by\[
+% \phi_{X}(t)=\frac{\Gamma[(p+q)/2]}{\Gamma(q/2)}\Psi\left(\frac{p}{2},\,1-\frac{q}{2};\,-\frac{q}{p}it\right),\]
+% where $\Psi$ is \emph{Kummer's confluent hypergeometric function
+% of the second kind}, also known as Kummer's $U$, defined by\[
+% \Psi(a,b;z)=\frac{\pi}{\sin\,\pi b}\left(\frac{_{1}F_{1}(a;b;z)}{\Gamma(1+a-b)\Gamma(b)}-z^{1-b}\frac{_{1}F_{1}(1+a-b;\,2-b;\, z)}{\Gamma(a)\Gamma(2-b)}\right).\]
+% See \cite{confHyp} in the references. Kummer's $U$ is calculated
+% with \texttt{kummerU}, again from the \Rpackage{fAsianOptions} package. 
+% 
+% The p.d.f.~of the noncentral $F$ distribution ($\lambda\neq0$)
+% as\[
+% f_{X}(x)=f_{p,q}(x)\,\me^{-\lambda/2}\sum_{k=0}^{\infty}\left\{ \left(\frac{\frac{1}{2}\lambda px}{q+px}\right)^{k}\cdot\frac{(p+q)(p+q+2)\cdots(p+q+2\cdot\overline{k-1})}{k!\, p(p+2)\cdots(p+2\cdot\overline{k-1})}\right\} ,\quad x>0,\]
+% where $f_{p,q}$ is the p.d.f.~of the central $F$ distribution.
+% The characteristic function for the noncentral $F$ distribution is
+% given by \[
+% \phi_{X}(t)=\me^{-\lambda/2}\sum_{k=0}^{\infty}\frac{(\lambda/2)^{k}}{k!}{}_{1}F_{1}\left(\frac{p}{2}+k;\,-\frac{q}{2};\,-\frac{qit}{p}\right),\]
+% where $_{1}F_{1}$ is Kummer's confluent hypergeometric function of
+% the first kind defined above; see Section \ref{sub:Beta-distribution}.
+% For the purposes of calculation, we may only use a finite sum to approximate
+% the infinite series, thus the user should specify an upper value of
+% $k$ to be used, denoted \texttt{kmax}, which has the default value
+% of \texttt{kmax} = 10. 
+% 
+% 
+% \paragraph*{Source Code:}
+% 
+% \begin{Schunk}
+% \begin{Soutput}
+% function (t, df1, df2, ncp, kmax = 10) 
+% {
+%     if (df1 <= 0 || df2 <= 0) 
+%         stop("df1 and df2 must be positive")
+%     require(fAsianOptions)
+%     if (identical(all.equal(ncp, 0), TRUE)) {
+%         gamma((df1 + df2)/2)/gamma(df2/2) * kummerU(-(0+1i) * 
+%             df2 * t/df1, df1/2, 1 - df2/2)
+%     }
+%     else {
+%         exp(-ncp/2) * sum((ncp/2)^(0:kmax)/factorial(0:kmax) * 
+%             kummerM(-(0+1i) * df2 * t/df1, df1/2 + 0:kmax, -df2/2))
+%     }
+% }
+% <environment: namespace:prob>
+% \end{Soutput}
+% \end{Schunk}
+% 
 
 \subsection{Gamma Distribution: \texttt{cfgamma(t, shape, rate = 1, scale = 1/rate)}\label{sub:Gamma-Distribution}}
 
