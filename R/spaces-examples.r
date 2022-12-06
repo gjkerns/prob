@@ -123,6 +123,7 @@
 #' urnsamples(1:10, size = 5)
 #' S <- cards()
 #' urnsamples(S, size = 2)
+#' @export
 `urnsamples` <- function (x, ...)
 UseMethod("urnsamples")
 
