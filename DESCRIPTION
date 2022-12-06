@@ -1,5 +1,5 @@
 Package: prob
-Version: 1.0-1
+Version: 1.0-2
 Date: 2022-12-05
 Title: Elementary Probability on Finite Sample Spaces
 Authors@R: person(given = "G. Jay", family = "Kerns", role = c("aut", "cre", "cph"), email = "gkerns@ysu.edu")
@@ -14,6 +14,6 @@ Description:
  large numbers, adding random variables, and finding marginal distributions.
  Characteristic functions for all base R distributions are included.
 License: GPL (>= 3)
-URL: http://prob.r-forge.r-project.org, http://gkerns.people.ysu.edu/
+URL: https://github.com/gjkerns/prob/
 RoxygenNote: 7.2.2
 Encoding: UTF-8
