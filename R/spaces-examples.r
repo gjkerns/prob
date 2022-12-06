@@ -73,7 +73,19 @@
 }
 
 
-
+#' Tossing a coin
+#' 
+#' Sets up a sample space for the experiment of tossing a coin repeatedly with the outcomes "H" or "T".
+#' 
+#' The function uses `expand.grid()` to generate all possible sequences of flips resulting from 
+#' the experiment of tossing a coin.  Columns of the dataframe are denoted `toss1`, 
+#' `toss2`, up to `tosstimes`.
+#' @param times number of tosses.
+#' @param makespace logical.
+#' @return  A data frame, with an equally likely \code{probs} column if \code{makespace} is \code{TRUE}.
+#' @examples
+#' tosscoin(2)
+#' tosscoin(3, makespace = TRUE)
 `tosscoin` <- function (times, makespace = FALSE){
     temp <- list()
     for (i in 1:times) {
