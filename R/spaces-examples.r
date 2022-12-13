@@ -124,7 +124,7 @@
 #' S <- cards()
 #' urnsamples(S, size = 2)
 #' @export
-`urnsamples` <- function (x, ...)
+`urnsamples` <- function (x, size, replace = FALSE, ordered = FALSE, ...)
 UseMethod("urnsamples")
 
 
@@ -153,7 +153,7 @@ UseMethod("urnsamples")
         if (size > nurn) 
             stop("cannot take a sample larger than the urn size when 'replace = FALSE'")
         if (isTRUE(ordered)) {
-            ind <- permsn(1:nurn, size)
+            ind <- prob::permsn(1:nurn, size)
         }
         else {
             ind <- combn(1:nurn, size)

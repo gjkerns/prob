@@ -30,7 +30,6 @@
     return(res)
 }
 
-
 #' @export
 `permsn` <- function (x, m)
 {

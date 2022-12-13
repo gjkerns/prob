@@ -60,6 +60,16 @@ UseMethod("setdiff")
     return(res)
 }
 
+
+#' Subsets of probability space objects.
+#' 
+#' @name subset
+#' @rdname subset
+#' @aliases subset
+#' @param x a probability space
+#' @param subset logical expression indicating elements or rows of space to keep: missing values are taken as false.
+#' @param ... further arguments to be passed to or from other methods.
+#' @method subset ps
 #' @export
 `subset.ps` <- function (x, subset, ...){
     e <- substitute(subset)

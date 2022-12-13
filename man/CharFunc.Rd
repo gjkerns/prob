@@ -4,12 +4,10 @@
 
 \name{CharFunc}
 \concept{characteristic function}
-\alias{cfbeta}
 \alias{cfbinom}
 \alias{cfcauchy}
 \alias{cfchisq}
 \alias{cfexp}
-\alias{cff}
 \alias{cfgamma}
 \alias{cfgeom}
 \alias{cfhyper}
@@ -34,12 +32,12 @@
 }
 
 \usage{
-cfbeta(t, shape1, shape2, ncp = 0)
+#cfbeta(t, shape1, shape2, ncp = 0)
 cfbinom(t, size, prob)
 cfcauchy(t, location = 0, scale = 1)
 cfchisq(t, df, ncp = 0)
 cfexp(t, rate = 1)
-cff(t, df1, df2, ncp, kmax = 10)
+#cff(t, df1, df2, ncp, kmax = 10)
 cfgamma(t, shape, rate = 1, scale = 1/rate)
 cfgeom(t, prob)
 cfhyper(t, m, n, k)
@@ -58,7 +56,7 @@ cfwilcox(t, m, n)
 \arguments{
   \item{t}{numeric value.  Some of the above are vectorized functions.}
   \item{df}{degrees of freedom (\eqn{> 0}, maybe non-integer)}
-  \item{df1, df2}{degrees of freedom (\eqn{> 0}, maybe non-integer)}
+#  \item{df1, df2}{degrees of freedom (\eqn{> 0}, maybe non-integer)}
   \item{k}{the number of balls drawn from the urn.}
   \item{kmax}{upper limit of summation.}
   \item{lambda}{vector of (positive) means.}
@@ -76,7 +74,7 @@ cfwilcox(t, m, n)
   \item{rate}{an alternative way to specify the scale; must be positive.}  
   \item{sd}{vector of standard deviations.}
   \item{shape}{shape parameter, must be positive (gamma, weibull)}
-  \item{shape1, shape2}{shape parameters (beta).}
+#  \item{shape1, shape2}{shape parameters (beta).}
   \item{size}{number of trials (binom) or target for number of successful trials
     (nbinom).}
 }
@@ -96,20 +94,6 @@ cfwilcox(t, m, n)
   more details on characteristic functions and their properties, see Lukacs (1970).
 }
 
-
-\section{Beta distribution}{
-  For the probability density function, see \code{\link{dbeta}}.
-    
-  The characteristic function for central Beta is given by
-  \deqn{ \phi(t) = _{1}F_{1}(\alpha; \alpha + \beta, it) }{
-    phi(t) = _{1}F_{1}(shape1; shape1 + shape2, it) 
-  }
-  where \eqn{F} is the confluent hypergeometric function calculated with
-  \code{\link[fAsianOptions]{kummerM}} in the \code{fAsianOptions} package.
-  
-  As of the time of this writing, we must calculate the characteristic function
-  of the noncentral Beta with numerical integration according to the definition.
-}
 
 
 \section{Binomial distribution}{
@@ -145,18 +129,6 @@ cfwilcox(t, m, n)
   For the probability density function, see \code{\link{dexp}}.
 
   This is the special case of gamma when \eqn{\alpha = 1}.
-}
-
-
-\section{F Distribution}{
-  For the probability density function, see \code{\link{df}}.
-
-  For the central \eqn{F} we use confluent hypergeometric function of the second kind,
-  also known as \code{\link[fAsianOptions]{kummerU}}, from the
-  \code{fAsianOptions} package.
-
-  For noncentral \eqn{F} we use confluent hypergeometric function of the
-  first kind.  See the vignette for details. 
 }
 
 
@@ -315,8 +287,6 @@ cfwilcox(t, m, n)
 
 \seealso{
   \code{\link{besselK}}
-  \code{\link[fAsianOptions]{kummerM}} 
-  \code{\link[fAsianOptions]{kummerU}}
   \code{\link[hypergeo]{hypergeo}} 
 }
 

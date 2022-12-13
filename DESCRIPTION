@@ -12,7 +12,9 @@ Description:
  and conditional probability, tools for simulation and checking the law of
  large numbers, adding random variables, and finding marginal distributions.
  Characteristic functions for all base R distributions are included.
-License: GPL (>= 3)
+License: GPL (>= 3) + file LICENSE
 URL: https://github.com/gjkerns/prob/
 RoxygenNote: 7.2.2
 Encoding: UTF-8
+Imports: 
+    stats
