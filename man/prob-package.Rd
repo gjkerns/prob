@@ -6,7 +6,7 @@
 \alias{prob-package}
 \title{prob: Elementary Probability on Finite Sample Spaces}
 \description{
-A framework for performing elementary probability calculations on finite sample spaces, which may be represented by data frames or lists. Functionality includes setting up sample spaces, counting tools, defining probability spaces, performing set algebra, calculating probability and conditional probability, tools for simulation and checking the law of large numbers, adding random variables, and finding marginal distributions. Characteristic functions for all base R distributions are included.
+A framework for performing elementary probability calculations on finite sample spaces, which may be represented by data frames or lists. Functionality includes setting up sample spaces, counting tools, defining probability spaces, performing set algebra, calculating probability and conditional probability, tools for simulation and checking the law of large numbers, adding random variables, and finding marginal distributions. Characteristic functions for most base R distributions are implemented from the work of Eugene Lukacs (1972) \doi{10.2307/1425805}.
 }
 \seealso{
 Useful links:
