@@ -47,7 +47,6 @@ cfexp <- function(t, rate = 1){
 
 
 # kummerU available in hypergeom.r 
- 
 cff <- function(t, df1, df2, ncp, kmax = 10){
     if (df1 <= 0 || df2 <= 0  )
          stop("df1 and df2 must be positive")
